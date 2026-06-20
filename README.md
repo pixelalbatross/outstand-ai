@@ -4,7 +4,7 @@
 
 ## Description
 
-Outstand AI brings AI features to the WordPress editor, giving editors controls for AI behavior that WordPress and the [WordPress AI plugin](https://wordpress.org/plugins/ai/) don't expose on their own.
+Outstand AI brings AI features to the WordPress editor, with controls for AI behavior that WordPress and the [WordPress AI plugin](https://wordpress.org/plugins/ai/) don't expose on their own.
 
 The first feature steers **featured image** generation: describe how the image should look, per post or as a site-wide default, and Outstand AI feeds that into the AI plugin's image prompt.
 
@@ -54,9 +54,16 @@ Features that extend the [WordPress AI plugin](https://wordpress.org/plugins/ai/
 
 ## Extending
 
-Register additional prompt-steering features with the `outstand_ai_features` filter:
+Register additional prompt-steering features with the `outstand_ai_features` filter. Each feature must extend `Outstand\WP\AI\PromptFeature`:
 
 ```php
+use Outstand\WP\AI\PromptFeature;
+
+class My_Custom_Prompt_Feature extends PromptFeature {
+    // Implement get_id(), get_label(), get_ability(),
+    // get_inject_field() and get_description().
+}
+
 add_filter( 'outstand_ai_features', function ( $features ) {
     $features[] = new My_Custom_Prompt_Feature();
     return $features;

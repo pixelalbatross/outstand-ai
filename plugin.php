@@ -6,7 +6,7 @@
  * Plugin URI:        https://outstand.site/?utm_source=wp-plugins&utm_medium=outstand-ai&utm_campaign=plugin-uri
  * Requires at least: 6.7
  * Requires PHP:      8.2
- * Version:           0.1.0
+ * Version:           1.0.0
  * Author:            Outstand
  * Author URI:        https://outstand.site/?utm_source=wp-plugins&utm_medium=outstand-ai&utm_campaign=author-uri
  * License:           GPL-3.0-or-later
@@ -26,7 +26,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'OUTSTAND_AI_VERSION', '0.1.0' );
+define( 'OUTSTAND_AI_VERSION', '1.0.0' );
 define( 'OUTSTAND_AI_BASENAME', plugin_basename( __FILE__ ) );
 define( 'OUTSTAND_AI_URL', plugin_dir_url( __FILE__ ) );
 define( 'OUTSTAND_AI_PATH', plugin_dir_path( __FILE__ ) );
