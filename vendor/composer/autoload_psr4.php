@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Outstand\\WP\\AI\\' => array($baseDir . '/includes'),
+    'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => array($vendorDir . '/dealerdirect/phpcodesniffer-composer-installer/src'),
 );

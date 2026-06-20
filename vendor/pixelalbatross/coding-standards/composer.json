@@ -1,0 +1,25 @@
+{
+  "name": "pixelalbatross/coding-standards",
+  "description": "Pixel Albatross Coding Standards",
+  "type": "phpcodesniffer-standard",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Pixel Albatross",
+      "email": "info@pixelalbatross.pt"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "squizlabs/php_codesniffer": "^3.6",
+    "wp-coding-standards/wpcs": "^2.3|^3.0"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}

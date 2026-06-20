@@ -1,6 +1,7 @@
 {
   "name": "outstand/ai",
   "type": "wordpress-plugin",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Sérgio Santos",
@@ -19,6 +20,9 @@
   },
   "require-dev": {
     "pixelalbatross/coding-standards": "dev-main"
+  },
+  "extra": {
+    "installer-name": "outstand-ai"
   },
   "scripts": {
     "lint": "phpcs .",
