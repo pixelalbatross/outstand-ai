@@ -8,8 +8,6 @@ Outstand AI brings AI features to the WordPress editor, giving editors controls 
 
 The first feature steers **featured image** generation: describe how the image should look, per post or as a site-wide default, and Outstand AI feeds that into the AI plugin's image prompt.
 
-It is built as a small framework, so new features drop in over time and all appear together in a single editor sidebar. Each feature appears only when its requirements are met.
-
 This is useful when:
 
 - A post needs a specific featured image direction (style, mood, composition).

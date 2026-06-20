@@ -63,7 +63,11 @@ function FeatureField({ feature, meta, setMeta }) {
 				label={feature.label}
 				hideLabelFromVision
 				help={feature.description}
-				placeholder={feature.global || feature.example || ''}
+				placeholder={
+					(feature.nativeGlobalActive ? '' : feature.global) ||
+					feature.example ||
+					''
+				}
 				value={value}
 				rows={6}
 				onChange={(next) =>

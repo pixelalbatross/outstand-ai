@@ -155,7 +155,7 @@ abstract class PromptFeature extends BaseModule {
 			$this->get_option_key(),
 			[
 				'type'              => 'string',
-				'sanitize_callback' => 'sanitize_textarea_field',
+				'sanitize_callback' => [ $this, 'sanitize_option' ],
 				'default'           => '',
 			]
 		);
@@ -174,6 +174,29 @@ abstract class PromptFeature extends BaseModule {
 			$page,
 			$section_id
 		);
+	}
+
+	/**
+	 * Sanitize the global default prompt.
+	 *
+	 * Mirrors the field lock: once a native Guidelines feature is available, the
+	 * deprecated option cannot gain new content. Existing (legacy) values stay
+	 * editable so they can be cleared or migrated.
+	 *
+	 * @param  mixed $value The submitted value.
+	 * @return string
+	 */
+	public function sanitize_option( $value ): string {
+
+		$value = sanitize_textarea_field( (string) $value );
+
+		$current = (string) get_option( $this->get_option_key(), '' );
+
+		if ( $this->is_native_global_available() && '' === trim( $current ) ) {
+			return '';
+		}
+
+		return $value;
 	}
 
 	/**
