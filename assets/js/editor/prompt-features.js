@@ -10,7 +10,8 @@ import {
 import { PanelBody, TextareaControl } from '@wordpress/components';
 import { useEntityProp } from '@wordpress/core-data';
 import { useSelect, select } from '@wordpress/data';
-import { __ } from '@wordpress/i18n';
+import { createInterpolateElement } from '@wordpress/element';
+import { __, sprintf } from '@wordpress/i18n';
 
 /**
  * Internal dependencies
@@ -20,10 +21,30 @@ import { aiIcon } from './icon';
 
 const SIDEBAR_NAME = 'outstand-ai-prompts';
 const SIDEBAR_ICON = aiIcon;
+const DEFAULT_TOKEN_FALLBACK = '{DEFAULT_PROMPT}';
+
+/**
+ * Expand every occurrence of the default-prompt token in a per-post prompt,
+ * then tidy the result so an empty or edge-positioned token leaves no gaps.
+ *
+ * @param {string} text          The per-post prompt.
+ * @param {string} token         The default-prompt token to replace.
+ * @param {string} defaultPrompt The global default to substitute in.
+ * @return {string} The merged prompt.
+ */
+function expandDefaultToken(text, token, defaultPrompt) {
+	return text
+		.split(token)
+		.join(defaultPrompt || '')
+		.replace(/\n{3,}/g, '\n\n')
+		.trim();
+}
 
 /**
  * Resolve the prompt for a feature: per-post override else global default.
- * Defers to a native site guideline when one is active.
+ * A per-post prompt may embed the default-prompt token to merge the global
+ * default with its own details instead of replacing it. Defers to a native
+ * site guideline when one is active and no per-post prompt is set.
  *
  * @param {Object} feature The feature config.
  * @return {string} The resolved prompt, or '' to leave the plugin default.
@@ -31,9 +52,16 @@ const SIDEBAR_ICON = aiIcon;
 function resolvePrompt(feature) {
 	const meta = select(editorStore).getEditedPostAttribute('meta') || {};
 	const perPost = meta[feature.metaKey];
+	const token = feature.defaultToken || DEFAULT_TOKEN_FALLBACK;
+	const global =
+		feature.global && feature.global.trim() ? feature.global : '';
 
-	// Per-post override always wins.
+	// Per-post override always wins. When it embeds the token, expand it inline
+	// to merge the global default with the user's details; otherwise it replaces.
 	if (perPost && perPost.trim()) {
+		if (perPost.includes(token)) {
+			return expandDefaultToken(perPost, token, global);
+		}
 		return perPost;
 	}
 
@@ -42,7 +70,7 @@ function resolvePrompt(feature) {
 		return '';
 	}
 
-	return feature.global && feature.global.trim() ? feature.global : '';
+	return global;
 }
 
 /**
@@ -56,13 +84,31 @@ function resolvePrompt(feature) {
  */
 function FeatureField({ feature, meta, setMeta }) {
 	const value = (meta && meta[feature.metaKey]) || '';
+	const token = feature.defaultToken || DEFAULT_TOKEN_FALLBACK;
+	const tip = createInterpolateElement(
+		sprintf(
+			/* translators: %s is the default-prompt token, e.g. {DEFAULT_PROMPT}. */
+			__(
+				'Tip: include <code>%s</code> to merge the default prompt with your details.',
+				'outstand-ai'
+			),
+			token
+		),
+		{ code: <code /> }
+	);
 
 	return (
 		<PanelBody title={feature.label} initialOpen>
 			<TextareaControl
 				label={feature.label}
 				hideLabelFromVision
-				help={feature.description}
+				help={
+					<>
+						{feature.description}
+						<br />
+						{tip}
+					</>
+				}
 				placeholder={
 					(feature.nativeGlobalActive ? '' : feature.global) ||
 					feature.example ||
