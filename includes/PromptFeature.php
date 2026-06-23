@@ -15,6 +15,15 @@ namespace Outstand\WP\AI;
 abstract class PromptFeature extends BaseModule {
 
 	/**
+	 * Token a per-post prompt can embed to inline-expand the global default,
+	 * letting the user merge the default with their own post-specific details
+	 * instead of replacing it.
+	 *
+	 * @var string
+	 */
+	public const DEFAULT_PROMPT_TOKEN = '{DEFAULT_PROMPT}';
+
+	/**
 	 * Unique feature id (kebab-case), e.g. `featured-image-prompt`.
 	 *
 	 * @return string
@@ -249,6 +258,7 @@ abstract class PromptFeature extends BaseModule {
 			'global'             => (string) get_option( $this->get_option_key(), '' ),
 			'example'            => $this->get_example(),
 			'nativeGlobalActive' => $this->is_native_global_active(),
+			'defaultToken'       => self::DEFAULT_PROMPT_TOKEN,
 		];
 	}
 
