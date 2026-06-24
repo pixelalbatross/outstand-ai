@@ -9,6 +9,7 @@ return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Outstand\\WP\\AI\\Assets' => $baseDir . '/includes/Assets.php',
     'Outstand\\WP\\AI\\BaseModule' => $baseDir . '/includes/BaseModule.php',
+    'Outstand\\WP\\AI\\Features\\ExcerptPrompt' => $baseDir . '/includes/Features/ExcerptPrompt.php',
     'Outstand\\WP\\AI\\Features\\FeaturedImagePrompt' => $baseDir . '/includes/Features/FeaturedImagePrompt.php',
     'Outstand\\WP\\AI\\GetAssetInfo' => $baseDir . '/includes/GetAssetInfo.php',
     'Outstand\\WP\\AI\\Plugin' => $baseDir . '/includes/Plugin.php',

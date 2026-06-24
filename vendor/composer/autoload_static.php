@@ -28,6 +28,7 @@ class ComposerStaticInit8ff709178e1d81a599cabab79593df7d
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Outstand\\WP\\AI\\Assets' => __DIR__ . '/../..' . '/includes/Assets.php',
         'Outstand\\WP\\AI\\BaseModule' => __DIR__ . '/../..' . '/includes/BaseModule.php',
+        'Outstand\\WP\\AI\\Features\\ExcerptPrompt' => __DIR__ . '/../..' . '/includes/Features/ExcerptPrompt.php',
         'Outstand\\WP\\AI\\Features\\FeaturedImagePrompt' => __DIR__ . '/../..' . '/includes/Features/FeaturedImagePrompt.php',
         'Outstand\\WP\\AI\\GetAssetInfo' => __DIR__ . '/../..' . '/includes/GetAssetInfo.php',
         'Outstand\\WP\\AI\\Plugin' => __DIR__ . '/../..' . '/includes/Plugin.php',
