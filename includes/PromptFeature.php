@@ -263,18 +263,29 @@ abstract class PromptFeature extends BaseModule {
 	}
 
 	/**
-	 * Public post types that support featured images.
+	 * The post-type feature a post type must support for this prompt to apply,
+	 * e.g. `thumbnail` for featured images or `excerpt` for excerpts.
+	 *
+	 * @return string
+	 */
+	protected function get_post_type_support(): string {
+		return 'thumbnail';
+	}
+
+	/**
+	 * Public post types that support this feature's required capability.
 	 *
 	 * @return string[]
 	 */
 	protected function get_post_types(): array {
 
 		$post_types = get_post_types( [ 'public' => true ], 'names' );
+		$support    = $this->get_post_type_support();
 
 		$supported = array_filter(
 			$post_types,
-			static function ( $post_type ) {
-				return post_type_supports( $post_type, 'thumbnail' );
+			static function ( $post_type ) use ( $support ) {
+				return post_type_supports( $post_type, $support );
 			}
 		);
 

@@ -72,6 +72,7 @@ class Plugin {
 			'outstand_ai_features',
 			[
 				new Features\FeaturedImagePrompt(),
+				new Features\ExcerptPrompt(),
 			]
 		);
 	}
