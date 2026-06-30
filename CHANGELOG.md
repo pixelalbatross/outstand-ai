@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-06-30
+
+### Added
+
+- The SEO Framework integration: the WordPress AI plugin's Meta Description experiment now stores its generated description in The SEO Framework's `_genesis_description` field and registers it for REST so the editor save persists. Active only when both the AI plugin and The SEO Framework are present.
+
 ## [1.2.0] - 2026-06-29
 
 ### Added

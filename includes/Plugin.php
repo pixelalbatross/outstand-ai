@@ -45,6 +45,7 @@ class Plugin {
 			[
 				new Settings( $features ),
 				new Assets( $features ),
+				new Integrations\TheSeoFramework(),
 			],
 			$features
 		);

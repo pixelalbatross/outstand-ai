@@ -31,6 +31,7 @@ class ComposerStaticInit8ff709178e1d81a599cabab79593df7d
         'Outstand\\WP\\AI\\Features\\ExcerptPrompt' => __DIR__ . '/../..' . '/includes/Features/ExcerptPrompt.php',
         'Outstand\\WP\\AI\\Features\\FeaturedImagePrompt' => __DIR__ . '/../..' . '/includes/Features/FeaturedImagePrompt.php',
         'Outstand\\WP\\AI\\GetAssetInfo' => __DIR__ . '/../..' . '/includes/GetAssetInfo.php',
+        'Outstand\\WP\\AI\\Integrations\\TheSeoFramework' => __DIR__ . '/../..' . '/includes/Integrations/TheSeoFramework.php',
         'Outstand\\WP\\AI\\Plugin' => __DIR__ . '/../..' . '/includes/Plugin.php',
         'Outstand\\WP\\AI\\PromptFeature' => __DIR__ . '/../..' . '/includes/PromptFeature.php',
         'Outstand\\WP\\AI\\Settings' => __DIR__ . '/../..' . '/includes/Settings.php',

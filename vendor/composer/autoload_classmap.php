@@ -12,6 +12,7 @@ return array(
     'Outstand\\WP\\AI\\Features\\ExcerptPrompt' => $baseDir . '/includes/Features/ExcerptPrompt.php',
     'Outstand\\WP\\AI\\Features\\FeaturedImagePrompt' => $baseDir . '/includes/Features/FeaturedImagePrompt.php',
     'Outstand\\WP\\AI\\GetAssetInfo' => $baseDir . '/includes/GetAssetInfo.php',
+    'Outstand\\WP\\AI\\Integrations\\TheSeoFramework' => $baseDir . '/includes/Integrations/TheSeoFramework.php',
     'Outstand\\WP\\AI\\Plugin' => $baseDir . '/includes/Plugin.php',
     'Outstand\\WP\\AI\\PromptFeature' => $baseDir . '/includes/PromptFeature.php',
     'Outstand\\WP\\AI\\Settings' => $baseDir . '/includes/Settings.php',
