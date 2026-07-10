@@ -3,7 +3,7 @@
         'name' => 'outstand/ai',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'a757ef6561bc8e3f1065b64c08b3db36a5944562',
+        'reference' => '7b15767b6997a1d50c30bf044df148e6e5a72391',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'outstand/ai' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a757ef6561bc8e3f1065b64c08b3db36a5944562',
+            'reference' => '7b15767b6997a1d50c30bf044df148e6e5a72391',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-07-10
+
+### Changed
+
+- Internal: moved the JavaScript source from `assets/js/` to `src/` to match the house plugin layout. No change to the shipped build.
+- Internal: added a PHPUnit test setup (`wp-env`, bootstrap, and initial unit tests) for the module and asset-manifest helpers.
+
 ## [1.3.0] - 2026-06-30
 
 ### Added

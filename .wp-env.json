@@ -1,0 +1,17 @@
+{
+	"core": "WordPress/WordPress#master",
+	"phpVersion": "8.2",
+	"plugins": [
+		".",
+		"https://downloads.wordpress.org/plugin/ai.zip",
+		"https://downloads.wordpress.org/plugin/autodescription.zip"
+	],
+	"mappings": {
+		"wp-content/plugins/outstand-ai": "."
+	},
+	"config": {
+		"WP_DEBUG": true,
+		"WP_DEBUG_LOG": true,
+		"SCRIPT_DEBUG": true
+	}
+}

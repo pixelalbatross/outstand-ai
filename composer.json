@@ -13,20 +13,28 @@
       "Outstand\\WP\\AI\\": "includes/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Outstand\\WP\\AI\\Tests\\Unit\\": "tests/php/unit/"
+    }
+  },
   "require": {
     "php": "^8.2",
     "composer-plugin-api": "^2.3",
     "yahnis-elsts/plugin-update-checker": "^5.6"
   },
   "require-dev": {
-    "pixelalbatross/coding-standards": "dev-main"
+    "phpunit/phpunit": "^9.6",
+    "pixelalbatross/coding-standards": "dev-main",
+    "yoast/phpunit-polyfills": "^1.1"
   },
   "extra": {
     "installer-name": "outstand-ai"
   },
   "scripts": {
     "lint": "phpcs .",
-    "lint-fix": "phpcbf ."
+    "lint-fix": "phpcbf .",
+    "test": "phpunit"
   },
   "config": {
     "sort-packages": true,

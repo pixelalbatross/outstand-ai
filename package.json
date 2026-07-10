@@ -1,6 +1,6 @@
 {
   "name": "outstand-ai",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Add AI features to WordPress.",
   "contributors": [
     {
@@ -13,13 +13,19 @@
     "build": "wp-scripts build",
     "format-js": "wp-scripts format",
     "lint-js": "wp-scripts lint-js",
-    "clean-build": "rm -rf ./build"
+    "clean-build": "rm -rf ./build",
+    "wp-env": "wp-env",
+    "wp-env:clean": "wp-env clean all",
+    "test:setup": "npm run wp-env start",
+    "test:unit": "wp-env run tests-cli --env-cwd='wp-content/plugins/outstand-ai' vendor/bin/phpunit --testsuite=default",
+    "test:js": "wp-scripts test-unit-js"
   },
   "engines": {
     "node": ">=20.0.0",
     "npm": ">=9.0.0"
   },
   "devDependencies": {
+    "@wordpress/env": "^10.12.0",
     "@wordpress/scripts": "^30.12.0",
     "prettier": "^3.6.2"
   }

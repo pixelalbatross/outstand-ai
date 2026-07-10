@@ -1,9 +1,10 @@
 # Directories
 /.git export-ignore
 /.github export-ignore
-/assets export-ignore
 /node_modules export-ignore
 /release export-ignore
+/src export-ignore
+/tests export-ignore
 
 # Files
 /.* export-ignore
