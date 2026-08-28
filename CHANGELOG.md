@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-08-28
+
+### Fixed
+
+- Prompt injection now also covers ability run requests sent as `GET` with the input serialized into the query string, not just `POST` bodies. This keeps steering working if the WordPress AI plugin ever annotates its excerpt or featured-image abilities as `readonly` (which flips the core ability client to `GET`).
+
+### Changed
+
+- Internal: added JavaScript unit tests for the api-fetch middleware, and updated the excerpt-steering documentation to match the WordPress AI plugin 1.3.0 ability input schema (separate `content` input, `context` treated as additional context).
+
 ## [1.3.1] - 2026-07-10
 
 ### Changed

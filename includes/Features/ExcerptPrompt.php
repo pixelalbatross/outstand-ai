@@ -7,14 +7,17 @@ use Outstand\WP\AI\PromptFeature;
 /**
  * Steers the AI plugin's excerpt generation.
  *
- * The AI plugin generates excerpts via the `ai/excerpt-generation` Ability,
- * whose `context` input is normally the post ID (the server then pulls title and
- * terms from it). This feature injects a resolved prompt (per-post override, else
- * global default) into that `context` input. When a prompt is active it replaces
- * the post ID, so the excerpt is generated from the post body plus the steering
- * prompt; the server-fetched title/terms context is intentionally dropped while
- * steering. With no prompt set, the input is left untouched and native behavior
- * (post-ID context) is preserved.
+ * The AI plugin generates excerpts via the `ai/excerpt-generation` Ability. The
+ * editor sends the post body as the `content` input and the post ID as the
+ * `context` input; when `context` is a post ID the server also pulls that post's
+ * title and terms as extra context. This feature injects a resolved prompt
+ * (per-post override, else global default) into the `context` input. Replacing
+ * the numeric post ID with a prompt string leaves the post body intact (it rides
+ * the separate `content` input) while the server treats the prompt as additional
+ * context, appending it to the content as `<additional-context>`; the server's
+ * own title/terms lookup is skipped because `context` is no longer a post ID.
+ * With no prompt set, the input is left untouched and native behavior (post-ID
+ * context) is preserved.
  */
 class ExcerptPrompt extends PromptFeature {
 
