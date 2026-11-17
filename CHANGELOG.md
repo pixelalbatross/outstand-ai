@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 ### Changed
 
 - The README now documents the Excerpt prompt, the `{DEFAULT_PROMPT}` token, and The SEO Framework integration.
+- Updated the plugin description in the plugin header, README, `composer.json`, and `package.json` to describe the editor controls for AI features that extend the WordPress AI plugin.
 
 ## [1.3.2] - 2026-08-28
 

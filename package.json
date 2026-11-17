@@ -1,7 +1,7 @@
 {
   "name": "outstand-ai",
   "version": "1.3.2",
-  "description": "Add AI features to WordPress.",
+  "description": "Editor controls for AI features in WordPress, extending the WordPress AI plugin.",
   "contributors": [
     {
       "name": "Sérgio Santos",

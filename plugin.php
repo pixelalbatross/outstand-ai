@@ -2,7 +2,7 @@
 /**
  * @wordpress-plugin
  * Plugin Name:       Outstand AI
- * Description:       Add AI features to WordPress.
+ * Description:       Editor controls for AI features in WordPress, extending the WordPress AI plugin.
  * Plugin URI:        https://outstand.site/?utm_source=wp-plugins&utm_medium=outstand-ai&utm_campaign=plugin-uri
  * Requires at least: 6.7
  * Requires PHP:      8.2

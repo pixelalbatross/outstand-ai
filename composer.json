@@ -1,5 +1,6 @@
 {
   "name": "outstand/ai",
+  "description": "Editor controls for AI features in WordPress, extending the WordPress AI plugin.",
   "type": "wordpress-plugin",
   "license": "GPL-3.0-or-later",
   "authors": [

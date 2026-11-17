@@ -1,6 +1,6 @@
 # Outstand AI
 
-> Add AI features to WordPress.
+> Editor controls for AI features in WordPress, extending the WordPress AI plugin.
 
 ## Description
 
