@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased]
 
+### Changed
+
+- The README now documents the Excerpt prompt, the `{DEFAULT_PROMPT}` token, and The SEO Framework integration.
+
 ## [1.3.2] - 2026-08-28
 
 ### Fixed
